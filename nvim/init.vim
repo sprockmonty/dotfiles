@@ -10,6 +10,8 @@ Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'vim-airline/vim-airline'
 Plug 'vim-airline/vim-airline-themes'
 Plug 'ryanoasis/vim-devicons'
+Plug 'JuliaEditorSupport/julia-vim'
+Plug 'kassio/neoterm'
 
 " Initialize plugin system
 call plug#end()
@@ -18,15 +20,15 @@ call plug#end()
 " nerdtree commands
 autocmd vimenter * NERDTree | wincmd p
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTree") && b:NERDTree.isTabTree()) | q | endif
-map <C-n> :NERDTreeMirror<CR>
+map <C-n> :NERDTreeToggle<CR>
 
-"other commands
+" other commands
 set number
 nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
-set ts=4 sw=4
+set ts=4 sts=4 sw=4 expandtab
 
 nnoremap <A-F1> 1gt
 nnoremap <A-F2> 2gt
@@ -59,3 +61,14 @@ call deoplete#custom#option('sources', {
 let g:airline#extensions#tabline#enabled = 1
 let g:airline_theme='luna'
 let g:airline_powerline_fonts = 1
+
+" Julia
+runtime macros/matchit.vim
+
+" Neoterm
+au VimEnter,BufRead,BufNewFile *.jl set filetype=julia
+let g:neoterm_size = 16
+let g:neoterm_default_mod='botright'
+let g:neoterm_autoscroll = 1
+vnoremap tt :TREPLSendSelection<CR>
+nnoremap tt :TREPLSendLine<CR>
