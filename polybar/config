@@ -77,6 +77,60 @@ tray-padding = 2
 cursor-click = pointer
 cursor-scroll = ns-resize
 
+[module/arrowi3]
+type = custom/text
+content = ""
+content-font = 2
+content-foreground = ${colors.blue}
+content-background = ${colors.background}
+
+[module/arrowtitle]
+type = custom/text
+content = " "
+content-font = 2
+content-foreground = ${colors.black}
+content-background = ${colors.background}
+
+[module/arrowkeyboard]
+; grey to bg
+type = custom/text
+content = " "
+content-font = 2
+content-foreground = ${colors.violet}
+content-background = ${colors.black}
+
+[module/arrowvolume]
+type = custom/text
+content = " "
+content-font = 2
+content-foreground = #02bdff
+content-background = ${colors.violet}
+
+[module/arrowcpu]
+; grey to bg
+type = custom/text
+content = ""
+content-font = 2
+content-foreground = #029dff
+content-background = #02bdff
+
+[module/arrowmemory]
+; bg to grey
+type = custom/text
+content = " "
+content-font = 2
+content-foreground = #027dff
+content-background = #0f9dff
+
+[module/arrowdate]
+; grey to bg
+type = custom/text
+content = " "
+content-font = 2
+content-foreground = #024dff
+content-background = #027dff
+
+
 [module/xwindow]
 type = internal/xwindow
 label = %title:0:30:...%
@@ -261,7 +315,7 @@ type = internal/date
 interval = 5
 
 date =
-date-alt = " %Y-%m-%d"
+date-alt = " %d-%m-%Y"
 
 time = %H:%M
 time-alt = %H:%M:%S
@@ -360,24 +414,24 @@ animation-discharging-2 = 
 animation-discharging-foreground = ${colors.foreground-alt}
 animation-discharging-framerate = 750
 
-[module/temperature]
-type = internal/temperature
-thermal-zone = 0
-warn-temperature = 60
-
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
-
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+;[module/temperature]
+;type = internal/temperature
+;thermal-zone = 0
+;warn-temperature = 60
+;
+;format = <ramp> <label>
+;format-underline = #f50a4d
+;format-warn = <ramp> <label-warn>
+;format-warn-underline = ${self.format-underline}
+;
+;label = %temperature-c%
+;label-warn = %temperature-c%
+;label-warn-foreground = ${colors.secondary}
+;
+;ramp-0 = 
+;ramp-1 = 
+;ramp-2 = 
+;ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
