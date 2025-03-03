@@ -1,0 +1,6 @@
+#!/bin/bash
+# change location of working directory quickely using cwd
+echo "#!/bin/bash" > ~/bin/wd
+echo "export WD=\"$(pwd)\"" >> ~/bin/wd
+source ~/bin/wd
+export WD

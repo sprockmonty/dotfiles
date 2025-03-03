@@ -1,0 +1,11 @@
+#!/bin/bash
+
+if [ "$#" -ne 1 ]; then
+	echo "Error: Please provide a branch name"
+	exit 1
+fi
+
+git checkout dev
+git pull
+git checkout -b $1 dev
+git push -u origin $1

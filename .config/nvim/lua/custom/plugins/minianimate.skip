@@ -1,0 +1,11 @@
+-- This is just one plugin in the mini ecosystem, some of the others might
+-- be useful too:
+-- https://github.com/echasnovski/mini.nvim
+return {
+  'echasnovski/mini.animate',
+  version = false,
+
+  config = function()
+    require('mini.animate').setup()
+  end,
+}
