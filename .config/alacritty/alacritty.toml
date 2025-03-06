@@ -14,7 +14,9 @@ dynamic_padding = true
 
 decorations = "None"
 
-opacity = 0.9
+# 0.9 for Gruvbox.
+# 0.7 others.
+opacity = 0.7
 
 [font]
 normal.family = "FiraCode Nerd Font"
@@ -22,37 +24,183 @@ normal.style = "Regular"
 
 size = 8
 
+# --------Colors (MSX-like)-------- #
+## # Notice that MSX used blue as background so [bright] blue and [bright] black
+## # are reversed in this theme. Also MSX had only 15 colors (color 0 was
+## # transparent) so 'gray' (#CCCCCC) is used two times both as white and
+## # bright black.
+## 
+## # Default colors
+## [colors.primary]
+## background = '#5955E0'
+## foreground = '#FFFFFF'
+## 
+## # Normal colors
+## [colors.normal]
+## # It is 'dark blue' not black
+## black = '#5955E0'
+## red = '#B95E51'
+## green = '#3AA241'
+## yellow = '#CCC35E'
+## # It is 'black' not blue
+## blue = '#000000'
+## # It is 'medium red' not magenta
+## magenta = '#DB6559'
+## # It is 'medium green' not cyan
+## cyan = '#3EB849'
+## # It is 'gray' not white
+## white = '#CCCCCC'
+## 
+## # Bright colors
+## [colors.bright]
+## # It is 'light blue' not bright black
+## black = '#8076F1'
+## red = '#FF897D'
+## green = '#74D07D'
+## yellow = '#DED087'
+## # It is 'gray' not bright blue
+## blue = '#CCCCCC'
+## # It is 'magenta' not bright magenta
+## magenta = '#B766B5'
+## # It is 'cyan' not bright cyan
+## cyan = '#65DBEF'
+## white = '#FFFFFF'
+# --------Colors (MSX-like)-------- #
 
-# Colors (Gruvbox dark)
-# Default colors
+# --------Colors (synthwave_84)-------- #
+## [colors.primary]
+## foreground = "#ffffff"
+## background = "#262335"
+## 
+## [colors.normal]
+## black = "#262335"
+## red = "#fe4450"
+## green = "#72f1b8"
+## yellow = "#f3e70f"
+## blue = "#03edf9"
+## magenta = "#ff7edb"
+## cyan = "#03edf9"
+## white = "#ffffff"
+## 
+## [colors.bright]
+## black = "#614d85"
+## red = "#fe4450"
+## green = "#72f1b8"
+## yellow = "#fede5d"
+## blue = "#03edf9"
+## magenta = "#ff7edb"
+## cyan = "#03edf9"
+## white = "#ffffff"
+# --------Colors (synthwave_84)-------- #
+
+# --------Colors (Gruvbox dark)-------- #
+## # Default colors
+## [colors.primary]
+## # hard contrast background = = '#1d2021'
+## background = '#282828'
+## # soft contrast background = = '#32302f'
+## foreground = '#ebdbb2'
+## 
+## # Normal colors
+## [colors.normal]
+## black   = '#282828'
+## red     = '#cc241d'
+## green   = '#98971a'
+## yellow  = '#d79921'
+## blue    = '#458588'
+## magenta = '#b16286'
+## cyan    = '#689d6a'
+## white   = '#a89984'
+## 
+## # Bright colors
+## [colors.bright]
+## black   = '#928374'
+## red     = '#fb4934'
+## green   = '#b8bb26'
+## yellow  = '#fabd2f'
+## blue    = '#83a598'
+## magenta = '#d3869b'
+## cyan    = '#8ec07c'
+## white   = '#ebdbb2'
+# --------Colors (Gruvbox dark)-------- #
+
+# --------Colors (carbonfox)-------- #
 [colors.primary]
-# hard contrast background = = '#1d2021'
-background = '#282828'
-# soft contrast background = = '#32302f'
-foreground = '#ebdbb2'
+background = "#161616"
+foreground = "#f2f4f8"
+dim_foreground = "#b6b8bb"
+bright_foreground = "#f9fbff"
 
-# Normal colors
+[colors.cursor]
+text = "#f2f4f8"
+cursor = "#b6b8bb"
+
+[colors.vi_mode_cursor]
+text = "#f2f4f8"
+cursor = "#33b1ff"
+
+[colors.search.matches]
+foreground = "#f2f4f8"
+background = "#525253"
+
+[colors.search.focused_match]
+foreground = "#f2f4f8"
+background = "#3ddbd9"
+
+[colors.footer_bar]
+foreground = "#f2f4f8"
+background = "#353535"
+
+[colors.hints.start]
+foreground = "#f2f4f8"
+background = "#3ddbd9"
+
+[colors.hints.end]
+foreground = "#f2f4f8"
+background = "#353535"
+
+[colors.selection]
+text = "#f2f4f8"
+background = "#2a2a2a"
+
 [colors.normal]
-black   = '#282828'
-red     = '#cc241d'
-green   = '#98971a'
-yellow  = '#d79921'
-blue    = '#458588'
-magenta = '#b16286'
-cyan    = '#689d6a'
-white   = '#a89984'
+black = "#282828"
+red = "#ee5396"
+green = "#25be6a"
+yellow = "#08bdba"
+blue = "#78a9ff"
+magenta = "#be95ff"
+cyan = "#33b1ff"
+white = "#dfdfe0"
 
-# Bright colors
 [colors.bright]
-black   = '#928374'
-red     = '#fb4934'
-green   = '#b8bb26'
-yellow  = '#fabd2f'
-blue    = '#83a598'
-magenta = '#d3869b'
-cyan    = '#8ec07c'
-white   = '#ebdbb2'
+black = "#9c9c9c"
+red = "#f16da6"
+green = "#46c880"
+yellow = "#2dc7c4"
+blue = "#8cb6ff"
+magenta = "#c8a5ff"
+cyan = "#52bdff"
+white = "#e4e4e5"
 
+[colors.dim]
+black = "#222222"
+red = "#ca4780"
+green = "#1fa25a"
+yellow = "#07a19e"
+blue = "#6690d9"
+magenta = "#a27fd9"
+cyan = "#2b96d9"
+white = "#bebebe"
+
+[[colors.indexed_colors]]
+index = 16
+color = "#3ddbd9"
+
+[[colors.indexed_colors]]
+index = 17
+color = "#ff7eb6"
+# --------Colors (carbonfox)-------- #
 [keyboard]
 bindings = [
   { key = "Escape",  mods = "Control", action = "ToggleViMode" },
