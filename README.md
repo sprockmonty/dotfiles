@@ -11,3 +11,5 @@ Install go formatters: https://github.com/segmentio/golines, https://github.com/
 mkdir -p ~/.local/share/fonts && cd ~/.local/share/fonts && curl -OL https://github.com/ryanoasis/nerd-fonts/releases/latest/download/FiraCode.tar.xz && tar xf FiraCode.tar.xz
 
 install alacritty, nvim, fish
+
+Fonts should be placed in ~/.local/share/fonts

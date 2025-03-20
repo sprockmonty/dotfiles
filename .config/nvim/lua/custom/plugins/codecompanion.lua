@@ -5,9 +5,9 @@ return {
     'nvim-treesitter/nvim-treesitter',
   },
   config = function()
-    vim.keymap.set({ 'n', 'v' }, '<LocalLeader>a', '<cmd>CodeCompanion<cr>/buffer ', { noremap = true, silent = true })
-    vim.keymap.set({ 'n', 'v', 'i' }, '<C-c>', '<cmd>CodeCompanion /buffer suggest<cr>', { noremap = true, silent = true })
-    vim.keymap.set({ 'n', 'v' }, '<C-e>', '<cmd>CodeCompanion /buffer explain<cr>', { noremap = true, silent = true })
+    vim.keymap.set({ 'n', 'v' }, '<LocalLeader>a', '<cmd>CodeCompanion<cr>#buffer ', { noremap = true, silent = true })
+    vim.keymap.set({ 'n', 'v', 'i' }, '<C-c>', '<cmd>CodeCompanion #buffer suggest some improvements<cr>', { noremap = true, silent = true })
+    vim.keymap.set({ 'n', 'v' }, '<C-e>', '<cmd>CodeCompanion #buffer explain this code<cr>', { noremap = true, silent = true })
 
     require('codecompanion').setup {
       adapters = {
@@ -19,7 +19,7 @@ return {
               },
             },
             env = {
-              api_key = 'replace-me-with-key',
+              api_key = 'REDACTED',
             },
           })
         end,
