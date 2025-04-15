@@ -13,3 +13,10 @@ mkdir -p ~/.local/share/fonts && cd ~/.local/share/fonts && curl -OL https://git
 install alacritty, nvim, fish
 
 Fonts should be placed in ~/.local/share/fonts
+
+In order to change colour schemes, first edit the alacritty config in
+`.config/alacritty/alacritty.toml`. Then edit neovim in
+`.config/nvim/init.lua`. Finally, edit starship in `.config/statship.toml`.
+
+I tried alacritty, but kitty supports ligaturem, so I use that now. But the
+alacritty config is still here just in case.

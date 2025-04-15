@@ -49,7 +49,7 @@ floating_modifier $mod
 tiling_drag modifier titlebar
 
 # start a terminal
-bindsym $mod+Return exec alacritty
+bindsym $mod+Return exec kitty
 
 # kill focused window
 bindsym $mod+q kill
@@ -192,6 +192,6 @@ bar {
 bindsym $mod+c exec "i3lock -c 000000"
 
 exec_always "setxkbmap -model pc105 -layout gb"
-exec_always "xrandr --output DP-1 --above eDP-1"
+exec_always "xrandr --auto && xrandr --output DP-1 --above eDP-1"
 exec_always "feh --bg-scale --randomize ~/.config/backgrounds/*"
 exec --no-startup-id "picom &"
