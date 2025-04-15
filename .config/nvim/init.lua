@@ -643,6 +643,9 @@ require('lazy').setup({
             return diagnostic_message[diagnostic.severity]
           end,
         },
+        virtual_lines = {
+          current_line = true,
+        },
       }
 
       -- LSP servers and clients are able to communicate to each other what features they support.
@@ -674,6 +677,7 @@ require('lazy').setup({
         prettierd = {},
         golangci_lint_ls = {},
         jdtls = {},
+        phpactor = {},
 
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -775,7 +779,10 @@ require('lazy').setup({
         javascript = { 'prettierd', 'prettier', stop_after_first = true },
         typescript = { 'prettierd', 'prettier', stop_after_first = true },
         typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
+        html = { 'prettierd', 'prettier', stop_after_first = true },
+        css = { 'prettierd', 'prettier', stop_after_first = true },
         go = { 'goimports', 'gofmt', 'gofumpt', 'golines' },
+        php = { 'php_cs_fixer' },
         -- Conform can also run multiple formatters sequentially
         -- python = { "isort", "black" },
         --
@@ -902,8 +909,8 @@ require('lazy').setup({
             -- set group index to 0 to skip loading LuaLS completions as lazydev recommends it
             group_index = 0,
           },
-          { name = 'nvim_lsp' },
-          { name = 'luasnip' },
+          { name = 'luasnip', priority = 5 },
+          { name = 'nvim_lsp', priority = 4 },
           { name = 'path' },
           { name = 'fuzzy_buffer' },
           { name = 'nvim_lsp_signature_help' },
@@ -987,6 +994,8 @@ require('lazy').setup({
       -- - sd'   - [S]urround [D]elete [']quotes
       -- - sr)'  - [S]urround [R]eplace [)] [']
       require('mini.surround').setup()
+      -- Set timeout to 2000ms
+      vim.o.timeoutlen = 2000
 
       -- Simple and easy statusline.
       --  You could remove this setup call if you don't like it,
