@@ -643,10 +643,16 @@ require('lazy').setup({
             return diagnostic_message[diagnostic.severity]
           end,
         },
-        virtual_lines = {
-          current_line = true,
-        },
+        -- virtual_lines = {
+        --   current_line = true,
+        -- },
       }
+
+      -- Enable debugging lines using shortcut
+      vim.keymap.set('n', 'gK', function()
+        local switchVirtualLines = not vim.diagnostic.config().virtual_lines
+        vim.diagnostic.config { virtual_lines = switchVirtualLines and { current_line = true } }
+      end, { desc = 'Toggle diagnostic virtual_lines' })
 
       -- LSP servers and clients are able to communicate to each other what features they support.
       --  By default, Neovim doesn't support everything that is in the LSP specification.
