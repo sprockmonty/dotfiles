@@ -403,6 +403,16 @@ require('lazy').setup({
         --   },
         -- },
         -- pickers = {}
+        defaults = {
+          layout_config = {
+            horizontal = {
+              prompt_position = 'top',
+              width = { padding = 0 },
+              height = { padding = 0 },
+              preview_width = 0.5,
+            },
+          },
+        },
         extensions = {
           ['ui-select'] = {
             require('telescope.themes').get_dropdown(),
@@ -610,6 +620,7 @@ require('lazy').setup({
           -- This may be unwanted, since they displace some of your code
           if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
             map('<leader>th', function()
+              -- TODO: Use this with virtual lines
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
             end, '[T]oggle Inlay [H]ints')
           end
@@ -683,7 +694,7 @@ require('lazy').setup({
         prettierd = {},
         golangci_lint_ls = {},
         jdtls = {},
-        phpactor = {},
+        intelephense = {},
 
         -- ... etc. See `:help lspconfig-all` for a list of all the pre-configured LSPs
         --
@@ -1069,6 +1080,8 @@ require('lazy').setup({
   --
   --  Uncomment the following line and add your plugins to `lua/custom/plugins/*.lua` to get going.
   { import = 'custom.plugins' },
+  -- Temp plugins for projects
+  { import = 'projects.plugins' },
   --
   -- For additional information with loading, sourcing and examples see `:help lazy.nvim-🔌-plugin-spec`
   -- Or use telescope!
@@ -1108,3 +1121,5 @@ vim.cmd 'hi Normal guibg=NONE ctermbg=NONE'
 -- Get function args when hovering over function.
 vim.keymap.set({ 'n', 'i' }, '<C-g>', vim.lsp.buf.signature_help, { desc = 'LSP signature help' })
 vim.keymap.set({ 'n' }, '<C-f>', vim.lsp.buf.hover, { desc = 'LSP signature help' })
+
+require 'projects'

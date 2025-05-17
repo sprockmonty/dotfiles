@@ -12,8 +12,9 @@ if status is-interactive
 	abbr -a bazel 'bazelisk'
 	abbr -a bench 'go test -bench=.'
 	abbr -a screen 'gnome-screenshot --interactive'
+	abbr -a cdn 'cd ~/Documents/notes'
 	source ~/bin/wd
-	export PATH="$HOME/bin:/usr/local/go/bin:$HOME/go/bin:$PATH"
+	export PATH="$HOME/.config/composer/vendor/bin:$HOME/bin:/usr/local/go/bin:$HOME/go/bin:$PATH"
 	export FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT='1'
 	fzf_configure_bindings --directory=\cf
 	starship init fish | source

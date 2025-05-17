@@ -8,4 +8,7 @@ RUN pacman -S --noconfirm jdk-openjdk dbeaver
 # Lazygit
 RUN pacman -S --noconfirm lazygit
 
+# Allow copying and pasting from container
+RUN pacman -S --noconfirm xsel wlroots
+
 CMD ["fish"]
