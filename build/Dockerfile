@@ -1,6 +1,6 @@
-FROM archlinux:latest
+FROM archlinux:base-devel
 
-RUN pacman -Syu --noconfirm kitty neovim fish starship git startup-notification fzf ripgrep fd make gcc go nodejs jq nnn
+RUN pacman -Syu --noconfirm kitty neovim fish starship git startup-notification fzf ripgrep fd go nodejs jq nnn nodejs
 
 # dbeaver
 RUN pacman -S --noconfirm jdk-openjdk dbeaver
