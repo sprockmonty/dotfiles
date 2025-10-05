@@ -1,0 +1,7 @@
+#!/bin/bash
+
+if [ "$#" -ne 1 ]; then
+	echo "Error: enter a binary path to export"
+	exit 1
+fi
+distrobox-export --bin $1 --export-path $HOME/bin

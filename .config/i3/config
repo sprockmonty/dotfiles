@@ -190,8 +190,13 @@ bar {
 }
 
 bindsym $mod+c exec "systemctl suspend"
+bindsym $mod+x exec "i3lock -c 000000 --nofork"
+
+bindsym $mod+Tab workspace back_and_forth
 
 exec_always "setxkbmap -model pc105 -layout gb"
 exec_always "xrandr --auto && xrandr --output DP-1 --above eDP-1"
 exec_always "feh --bg-scale --randomize ~/.config/backgrounds/*"
 exec --no-startup-id "picom &"
+
+exec --no-startup-id i3-msg 'workspace 10; exec /usr/bin/thunderbird'
