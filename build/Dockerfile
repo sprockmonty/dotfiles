@@ -2,11 +2,11 @@ FROM archlinux:base-devel
 
 RUN pacman-key --init
 
-RUN pacman -Syu --noconfirm kitty neovim fish starship git startup-notification fzf bat ripgrep fd go nodejs jq nnn
+RUN pacman -Syu --noconfirm kitty neovim fish starship git startup-notification fzf bat ripgrep fd go nodejs jq nnn github-cli
 
 # Yay for AUR
-RUN git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
-RUN yay -Y --gendb
+# RUN git clone https://aur.archlinux.org/yay.git && cd yay && makepkg -si
+# RUN yay -Y --gendb
 
 # dbeaver
 RUN pacman -S --noconfirm jdk-openjdk dbeaver
@@ -48,5 +48,9 @@ RUN pacman -S --noconfirm htop
 
 # Freecad
 RUN pacman -S --noconfirm freecad
+
+# Firefox
+RUN pacman -S --noconfirm firefox
+
 
 CMD ["fish"]

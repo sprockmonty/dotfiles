@@ -22,4 +22,17 @@ cp ../.gitconfig ~/.gitconfig
 
 # If you need true root access, run create with --root
 # with systemd: distrobox create --init --name arch-dev --image arch-dev --additional-packages "systemd"
-distrobox assemble create --name arch-dev --image arch-dev
+distrobox assemble create
+
+# Commands to run once box is built:
+# distrobox-export --app vlc
+# distrobox-export --bin /usr/bin/freecad --export-path ~/bin/freecad
+# distrobox-export --app firefox
+# distrobox-export --app krita
+# distrobox-export --app gimp
+# distrobox-export --app kitty
+# distrobox-export --app libreoffice
+
+# TODO ask for github user and email, then run
+# git config --global user.name "$NAME"
+# git config --global user.email "$EMAIL"
