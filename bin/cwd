@@ -1,6 +1,8 @@
 #!/bin/bash
-# change location of working directory quickely using cwd
-echo "#!/bin/bash" > ~/bin/wd
-echo "export WD=\"$(pwd)\"" >> ~/bin/wd
-source ~/bin/wd
-export WD
+# change location of working directory quickly using cwd
+if [[ -z $(grep -E "^$1:" ~/bin/wd) ]] 
+then
+        echo "$1:$(pwd)" >> ~/bin/wd
+else
+        sed -i "/^$1/c $1:$(pwd)" ~/bin/wd
+fi        

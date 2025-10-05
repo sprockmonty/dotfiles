@@ -620,7 +620,6 @@ require('lazy').setup({
           -- This may be unwanted, since they displace some of your code
           if client and client_supports_method(client, vim.lsp.protocol.Methods.textDocument_inlayHint, event.buf) then
             map('<leader>th', function()
-              -- TODO: Use this with virtual lines
               vim.lsp.inlay_hint.enable(not vim.lsp.inlay_hint.is_enabled { bufnr = event.buf })
             end, '[T]oggle Inlay [H]ints')
           end
@@ -660,7 +659,7 @@ require('lazy').setup({
       }
 
       -- Enable debugging lines using shortcut
-      vim.keymap.set('n', 'gK', function()
+      vim.keymap.set('n', '<leader>tv', function()
         local switchVirtualLines = not vim.diagnostic.config().virtual_lines
         vim.diagnostic.config { virtual_lines = switchVirtualLines and { current_line = true } }
       end, { desc = 'Toggle diagnostic virtual_lines' })
@@ -794,6 +793,7 @@ require('lazy').setup({
         json = { 'jq' },
         jsonc = { 'jq' },
         javascript = { 'prettierd', 'prettier', stop_after_first = true },
+        javascriptreact = { 'prettierd', 'prettier', stop_after_first = true },
         typescript = { 'prettierd', 'prettier', stop_after_first = true },
         typescriptreact = { 'prettierd', 'prettier', stop_after_first = true },
         html = { 'prettierd', 'prettier', stop_after_first = true },
@@ -1110,16 +1110,31 @@ require('lazy').setup({
 })
 
 -- Set splits to be vertical rather than horizontal (when using G diffthis for example).
-vim.cmd 'set diffopt+=vertical'
+vim.opt.diffopt:append('vertical')
 
 -- The line beneath this is called `modeline`. See `:help modeline`
 -- vim: ts=2 sts=2 sw=2 et
 
--- Set transparant background
+-- Set transparent background
 vim.cmd 'hi Normal guibg=NONE ctermbg=NONE'
 
 -- Get function args when hovering over function.
 vim.keymap.set({ 'n', 'i' }, '<C-g>', vim.lsp.buf.signature_help, { desc = 'LSP signature help' })
 vim.keymap.set({ 'n' }, '<C-f>', vim.lsp.buf.hover, { desc = 'LSP signature help' })
+
+-- Open to same line in file each time.
+vim.api.nvim_create_autocmd({ 'BufReadPost' }, {
+  pattern = { '*' },
+  callback = function()
+    if vim.fn.line '\'"' > 1 and vim.fn.line '\'"' <= vim.fn.line '$' then
+      vim.api.nvim_exec2('normal! g\'"', { output = false })
+    end
+  end,
+})
+
+-- Switch on spell checker
+vim.opt.spell = true
+vim.opt.spelllang = { 'en_us', 'en_gb' }
+vim.o.spelloptions = 'camel'
 
 require 'projects'

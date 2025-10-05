@@ -9,8 +9,8 @@ RUN yay -Y --gendb
 # dbeaver
 RUN pacman -S --noconfirm jdk-openjdk dbeaver
 
-# Lazygit
-RUN pacman -S --noconfirm lazygit
+# Lazygit + delta
+RUN pacman -S --noconfirm lazygit git-delta
 
 # Allow copying and pasting from container
 RUN pacman -S --noconfirm xsel wlroots
@@ -26,7 +26,9 @@ RUN pacman -S --noconfirm htop
 
 # Expose host docker to container, useful for things like minikube.
 # Hopefully it doesn't cause any issues.
-RUN ln -s /usr/bin/distrobox-host-exec /usr/local/bin/docker
+# RUN ln -s /usr/bin/distrobox-host-exec /usr/local/bin/docker
 
+# Freecad
+RUN pacman -S --noconfirm freecad
 
 CMD ["fish"]

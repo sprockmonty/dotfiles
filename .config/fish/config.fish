@@ -13,6 +13,7 @@ if status is-interactive
 	abbr -a bench 'go test -bench=.'
 	abbr -a screen 'gnome-screenshot --interactive'
 	abbr -a cdn 'cd ~/Documents/notes'
+	abbr -a lg 'lazygit'
 	source ~/bin/wd
 	export PATH="$HOME/.config/composer/vendor/bin:$HOME/bin:/usr/local/go/bin:$HOME/go/bin:$PATH"
 	export FUNCTIONS_CORE_TOOLS_TELEMETRY_OPTOUT='1'
