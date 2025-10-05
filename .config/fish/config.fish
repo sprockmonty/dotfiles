@@ -10,7 +10,7 @@ if status is-interactive
 	abbr -a lint 'golangci-lint run'
 	abbr -a bazel 'bazelisk'
 	abbr -a bench 'go test -bench=.'
-	abbr -a screen 'gnome-screenshot --interactive'
+	abbr -a screen 'flameshot'
 	abbr -a cdn 'cd ~/Documents/notes'
 	abbr -a sshkitty 'kitten ssh'
 	abbr -a icat 'kitten icat --align left'

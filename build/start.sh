@@ -14,6 +14,12 @@ fi
 # TODO: Check if the font already exists before copying.
 mkdir -p ~/.local/share/fonts && cp -r ../fonts/* ~/.local/share/fonts
 
+cp -r ../.config/* ~/.config/
+
+cp -r ../bin/* ~/bin/
+
+cp ../.gitconfig ~/.gitconfig
+
 # If you need true root access, run create with --root
 # with systemd: distrobox create --init --name arch-dev --image arch-dev --additional-packages "systemd"
-distrobox assemble create
+distrobox assemble create --name arch-dev --image arch-dev
