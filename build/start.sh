@@ -25,13 +25,13 @@ cp ../.gitconfig ~/.gitconfig
 distrobox assemble create
 
 # Commands to run once box is built:
-# distrobox-export --app vlc
-# distrobox-export --bin /usr/bin/freecad --export-path ~/bin/freecad
-# distrobox-export --app firefox
-# distrobox-export --app krita
-# distrobox-export --app gimp
-# distrobox-export --app kitty
-# distrobox-export --app libreoffice
+exec "/usr/bin/distrobox-enter"  -n arch-dev  --  'distrobox-export' '--app' 'vlc'
+exec "/usr/bin/distrobox-enter"  -n arch-dev  --  'distrobox-export' '--bin' '/usr/bin/freecad' '--export-path' '~/bin/freecad'
+exec "/usr/bin/distrobox-enter"  -n arch-dev  --  'distrobox-export' '--app' 'firefox'
+exec "/usr/bin/distrobox-enter"  -n arch-dev  --  'distrobox-export' '--app' 'krita'
+exec "/usr/bin/distrobox-enter"  -n arch-dev  --  'distrobox-export' '--app' 'gimp'
+exec "/usr/bin/distrobox-enter"  -n arch-dev  --  'distrobox-export' '--app' 'kitty'
+exec "/usr/bin/distrobox-enter"  -n arch-dev  --  'distrobox-export' '--app' 'libreoffice'
 
 # TODO ask for github user and email, then run
 # git config --global user.name "$NAME"
